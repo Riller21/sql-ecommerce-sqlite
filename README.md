@@ -1,51 +1,172 @@
-# sql-ecommerce-sqlite
-📊 Descrição das Tabelas — Projeto SQLite E-commerce
-🧍 clientes
+📊 SQL E-commerce SQLite — Practice Project
 
-Armazena os dados cadastrais dos clientes do e-commerce, incluindo informações de contato, localização e status de atividade.
-É utilizada como base para análises de comportamento de compra, segmentação de clientes e cálculo de métricas como ticket médio e faturamento por cliente.
+Projeto completo para prática de SQL do nível iniciante ao intermediário utilizando um banco de dados realista de e-commerce.
 
-🏠 enderecos
+Este repositório simula o ambiente de dados de uma empresa que vende acessórios para motos em múltiplos canais de venda.
 
-Armazena os endereços vinculados aos clientes, permitindo que um mesmo cliente possua múltiplos endereços (ex: residência, trabalho).
-É utilizada para simular cenários reais de entrega e relacionamento 1:N entre clientes e endereços.
+O objetivo é evoluir gradualmente nas habilidades de SQL, desde consultas básicas até análises de negócio (KPIs).
 
-🏭 fornecedores
+🎯 Objetivos do Projeto
 
-Armazena informações dos fornecedores responsáveis pelo fornecimento dos produtos comercializados.
-É utilizada para análises de dependência de fornecedores, gestão de compras e rastreabilidade de produtos.
+Este projeto foi criado para treinar:
 
-🗂️ categorias
+Modelagem de banco relacional
 
-Define as categorias dos produtos do catálogo (ex: Motor, Freios, Elétrica).
-É utilizada para organização do portfólio de produtos e análises de vendas por categoria.
+Criação de scripts SQL (DDL e DML)
 
-📦 produtos
+Escrita de queries progressivas
 
-Armazena o catálogo de produtos do e-commerce, incluindo informações de preço, estoque, categoria e fornecedor.
-É uma tabela central para análises de vendas, margem, giro de estoque, ruptura e desempenho de produtos.
+Análise de dados de negócio com SQL
 
-🛒 canais_venda
+🗄️ Estrutura do Repositório
+sql-ecommerce-sqlite/
+│
+├─ README.md
+│
+├─ db/
+│  ├─ ecommerce.db
+│  ├─ schema.sql
+│  ├─ seed.sql
+│
+├─ queries/
+│  ├─ 01_basico.sql
+│  ├─ 02_agregacoes.sql
+│  ├─ 03_joins.sql
+│  ├─ 04_subqueries_case.sql
+│  ├─ 05_kpis.sql
+│
+├─ docs/
+│  ├─ modelo-relacional.md
+│  ├─ dicionario-de-dados.md
+│
+└─ assets/
+   └─ diagrama.png (opcional)
 
-Armazena os canais de venda utilizados pela empresa, como marketplace e site próprio, incluindo suas respectivas taxas.
-É utilizada para análises de faturamento por canal e impacto de taxas na rentabilidade.
+🏍️ Cenário de Negócio
 
-👨‍💼 vendedores
+Banco de dados de uma empresa fictícia que vende:
 
-Armazena os dados dos vendedores ou responsáveis pelas vendas.
-É utilizada para análises de performance individual, ranking de vendedores e produtividade comercial.
+Guidões
 
-🧾 pedidos
+Manoplas
 
-Armazena o cabeçalho dos pedidos realizados no e-commerce, contendo informações do cliente, canal de venda, status, valores e forma de pagamento.
-É a principal tabela transacional do projeto, utilizada em praticamente todas as análises financeiras e operacionais.
+Retrovisores
 
-🧺 itens_pedido
+Pesos de guidão
 
-Armazena os itens que compõem cada pedido, detalhando produtos, quantidades, preços e descontos aplicados.
-É utilizada para análises detalhadas de vendas, faturamento por produto, mix de produtos e ticket médio.
+Acessórios para motos
 
-🔄 movimentos_estoque
+Canais de venda simulados:
 
-Registra o histórico de entradas, saídas e ajustes de estoque dos produtos.
-É utilizada para análises de controle de estoque, auditoria, rastreabilidade e simulação de processos logísticos reais.
+Shopee
+
+Mercado Livre
+
+Site próprio
+
+WhatsApp
+
+🗃️ Banco de Dados
+
+O banco foi modelado com as principais entidades de um e-commerce:
+
+Tabela	Descrição
+clientes	Cadastro de clientes
+enderecos	Endereços dos clientes
+fornecedores	Fornecedores
+categorias	Categorias de produtos
+produtos	Catálogo de produtos
+pedidos	Vendas realizadas
+itens_pedido	Itens dos pedidos
+canais_venda	Marketplaces
+vendedores	Equipe comercial
+movimentos_estoque	Controle de estoque
+🚀 Como Executar o Projeto
+
+Abrir o SQLite:
+
+sqlite3 db/ecommerce.db
+
+
+Criar as tabelas:
+
+.read db/schema.sql
+
+
+Inserir dados:
+
+.read db/seed.sql
+
+📚 Organização dos Exercícios SQL
+
+As queries estão separadas por nível de dificuldade:
+
+🟢 01_basico.sql
+
+SELECT
+
+WHERE
+
+ORDER BY
+
+LIMIT
+
+🟡 02_agregacoes.sql
+
+COUNT
+
+SUM
+
+AVG
+
+GROUP BY
+
+HAVING
+
+🟠 03_joins.sql
+
+INNER JOIN
+
+LEFT JOIN
+
+Relacionamentos entre tabelas
+
+🔵 04_subqueries_case.sql
+
+Subqueries
+
+CASE WHEN
+
+Queries mais complexas
+
+🟣 05_kpis.sql
+
+Análises reais de negócio:
+
+Faturamento total
+
+Ticket médio
+
+Produtos mais vendidos
+
+Faturamento por canal
+
+📈 Habilidades Demonstradas
+
+SQL
+
+SQLite
+
+Modelagem relacional
+
+Análise de dados
+
+Business Analytics
+
+📌 Próximos Passos
+
+Criar diagrama relacional
+
+Expandir dataset
+
+Criar dashboards (Power BI futuramente)
